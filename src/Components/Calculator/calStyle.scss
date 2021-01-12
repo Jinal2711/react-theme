@@ -1,0 +1,56 @@
+$baseColor: black;
+$displayColor: #2c5364;
+$keyColor: #203a43;
+$operatorColor: linear-gradient(to right, #cb356b, #bd3f32);
+$textColor: white;
+
+.cal {
+  background: $baseColor;
+  border-radius: 10px;
+  width: 50%;
+  margin: 0px auto;
+  color: $textColor;
+  &_display {
+    background: $displayColor;
+    height: 100px;
+    font-size: 50px;
+    text-align: right;
+    padding-right: 10px;
+    padding-top: 15px;
+  }
+  &_keys {
+    background-color: $keyColor;
+    height: 400px;
+  }
+}
+
+.parent {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.open {
+  display: contents;
+}
+
+.box {
+  height: 100px;
+  width: 25%;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  padding-top: 30px;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  background: $keyColor;
+  opacity: 0.7;
+  transition: 0.3s;
+  &:hover {
+    opacity: 1;
+    font-size: 40px;
+    padding-top: 25px;
+  }
+}
+.operator {
+  background: $operatorColor;
+}

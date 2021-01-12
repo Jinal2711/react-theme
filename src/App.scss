@@ -1,0 +1,405 @@
+
+body {
+  margin: 0;
+  text-align: center;
+}
+
+.light-theme {
+  background: linear-gradient(to right, #ada996, #f2f2f2, #dbdbdb, #eaeaea);
+  background: -webkit-linear-gradient(
+    to right,
+    #ada996,
+    #f2f2f2,
+    #dbdbdb,
+    #eaeaea
+  );
+  color: #444444;
+  min-height: 100vh;
+}
+nav {
+  display: flex;
+  text-align: center;
+  background-color: #503d81;
+  padding: 10px 40px;
+  color: #f8f8f8;
+}
+.content {
+  padding: 60px 0px 0px 0px;
+  margin: 0 auto;
+  max-width: 80%;
+  font-size: 1.2rem;
+  line-height: 1.1;
+}
+
+.dark-theme {
+  /* background-color: #1f1b24; */
+
+  background: linear-gradient(to right, #050620, #1f1b24);
+
+  color: #f8f8f8;
+  min-height: 100vh;
+}
+
+.dark-theme nav {
+  /* background-color: #332940; */
+  background: #cccccc;
+}
+.dark-theme code {
+  color: red;
+}
+.button-container {
+  display: flex;
+}
+button {
+  border: none;
+  padding: 15px;
+  outline: none;
+  border-radius: 10px;
+  margin: 5px 0px;
+}
+.complete-btn{
+  background-color: green;
+  color: white;
+  margin-right: 20px;
+
+}
+.delete-btn{
+  background-color: red;
+  color: white;
+}
+.dark-btn {
+  background-color: #ccc;
+  color: black;
+}
+.light-btn {
+  background-color: black;
+  color: white;
+}
+
+/* React form css */
+
+.react-form {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+.react-form h2 {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
+}
+.col-20 {
+  float: left;
+  width: 20%;
+}
+.col-70 {
+  float: right;
+  width: 70%;
+}
+.col-10 {
+  float: right;
+  width: 10%;
+}
+
+/* Todo liist style */
+
+.app {
+  background: #503d81;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.todo-list {
+  background: #e8e8e8;
+  border-radius: 4px;
+  padding: 11px 20px 21px;
+}
+
+.todo {
+  align-items: center;
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+  display: flex;
+  font-size: 20px;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  padding: 3px 10px;
+}
+.todo_input {
+  padding: 10px 0px;
+  margin: 20px 0px;
+  border: 0px solid #000000;
+  /* border: none; */
+  outline: none;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 20px;
+}
+
+/* about_page css */
+.row {
+  animation: mymove 5s slide;
+}
+.profile {
+  width: 80%;
+  border-radius: 10%;
+  animation-name: example;
+  animation-duration: 4s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+@keyframes example {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02, 1.02);
+  }
+  75% {
+    transform: scale(1.02, 1.02);
+  }
+  /* 100% {
+    transform: scale(1.1, 1.1);
+  } */
+}
+.column {
+  float: left;
+  width: 45%;
+  padding: 15px;
+  text-align: center;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    padding: 0px;
+  }
+}
+.profile-name {
+  text-align: left;
+  font-size: 70px;
+  text-shadow: 2px 2px red;
+}
+.profile-des {
+  text-align: left;
+  letter-spacing: 1.2px;
+  font-size: 25px;
+  text-shadow: 1px 1px blue;
+}
+.profile-info {
+  font-size: 70px;
+  text-align: left;
+  margin-block-start: 0.2em;
+  margin-block-end: 0.2em;
+  text-shadow: 2px 2px red;
+}
+.profile-info-table{
+  text-align: left;
+  line-height: 1;
+  font-size: 20px;
+  text-shadow: 1px 1px blue;
+}
+h3{
+  margin-block-start: 0em;
+    margin-block-end: 0em;
+}
+
+// progress bar
+
+@import url(https://fonts.googleapis.com/css?family=Lato:700);
+
+// -- vars
+$bg-color: #34495e;
+$default-size: 1em;
+$label-font-size: $default-size / 4;
+$label-font-size-redo: $default-size * 4;
+
+// -- mixins
+@mixin size($width, $height) {
+  height: $height;
+  width: $width;
+}
+
+@mixin draw-progress($progress, $color) {
+  .pie {
+    .half-circle {
+      border-color: $color;
+    }
+
+    .left-side {
+      transform: rotate($progress * 3.6deg);
+    }
+
+    @if $progress <= 50 {
+      .right-side {
+        display: none;
+      }
+    } @else {
+      clip: rect(auto, auto, auto, auto);
+
+      .right-side {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+
+@mixin draw-progress--solid($progress, $color, $bg-color) {
+  background: linear-gradient(to right, $color 50%, $bg-color 50%);
+
+  &:before {
+    @if $progress <= 50 {
+      background: $bg-color;
+      transform: rotate((100 - (50 - $progress)) / 100 * 360deg * -1);
+    } @else {
+      background: $color;
+      transform: rotate((100 - $progress) / 100 * 360deg);
+    }
+  }
+}
+
+// -- selectors
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.set-size {
+  font-size: 10em;
+}
+
+.charts-container {
+  &:after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+}
+
+.pie-wrapper {
+  @include size($default-size, $default-size);
+  float: left;
+  margin: 15px;
+  position: relative;
+
+  &:nth-child(3n + 1) {
+    clear: both;
+  }
+
+  .pie {
+    @include size(100%, 100%);
+    clip: rect(0, $default-size, $default-size, $default-size / 2);
+    left: 0;
+    position: absolute;
+    top: 0;
+
+    .half-circle {
+      @include size(100%, 100%);
+      border: ($default-size / 10) solid #3498db;
+      border-radius: 50%;
+      clip: rect(0, $default-size / 2, $default-size, 0);
+      left: 0;
+      position: absolute;
+      top: 0;
+    }
+  }
+
+  .label {
+    background: $bg-color;
+    border-radius: 50%;
+    bottom: $label-font-size-redo / 10;
+    color: #ecf0f1;
+    cursor: default;
+    display: block;
+    font-size: $label-font-size;
+    left: $label-font-size-redo / 10;
+    line-height: $label-font-size-redo * 0.7;
+    position: absolute;
+    right: $label-font-size-redo / 10;
+    text-align: center;
+    top: $label-font-size-redo / 10;
+
+    .smaller {
+      color: #bdc3c7;
+      font-size: 0.45em;
+      padding-bottom: 20px;
+      vertical-align: super;
+    }
+  }
+
+  .shadow {
+    @include size(100%, 100%);
+    border: $default-size / 10 solid #bdc3c7;
+    border-radius: 50%;
+  }
+
+  &.style-2 {
+    .label {
+      background: none;
+      color: #7f8c8d;
+
+      .smaller {
+        color: #bdc3c7;
+      }
+    }
+  }
+
+  &.progress-30 {
+    @include draw-progress(30, #3498db);
+  }
+
+  &.progress-60 {
+    @include draw-progress(60, #9b59b6);
+  }
+
+  &.progress-90 {
+    @include draw-progress(90, #e67e22);
+  }
+
+  &.progress-45 {
+    @include draw-progress(45, #1abc9c);
+  }
+
+  &.progress-75 {
+    @include draw-progress(75, #8e44ad);
+  }
+
+  &.progress-95 {
+    @include draw-progress(95, #e74c3c);
+  }
+}
+
+.pie-wrapper--solid {
+  border-radius: 50%;
+  overflow: hidden;
+
+  &:before {
+    border-radius: 0 100% 100% 0 / 50%;
+    content: "";
+    display: block;
+    height: 100%;
+    margin-left: 50%;
+    transform-origin: left;
+  }
+
+  .label {
+    background: transparent;
+  }
+
+  &.progress-65 {
+    @include draw-progress--solid(65, #e67e22, $bg-color);
+  }
+
+  &.progress-25 {
+    @include draw-progress--solid(25, #9b59b6, $bg-color);
+  }
+
+  &.progress-88 {
+    @include draw-progress--solid(88, #3498db, $bg-color);
+  }
+}
